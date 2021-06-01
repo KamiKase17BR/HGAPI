@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="336dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/textocidade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHGAPI"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textHGAPI"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="HG Weather Mobile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textocidade"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Insira a cidade"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/botaoBuscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/botaoBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Buscar"
+        app:backgroundTint="#C4D81B1B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textocidade"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/texthoje"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="21dp"
+        android:gravity="center"
+        android:text="Hoje"
+        app:layout_constraintBottom_toTopOf="@+id/textcelsius"
+        app:layout_constraintEnd_toStartOf="@+id/textdata"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botaoBuscar" />
+
+    <TextView
+        android:id="@+id/textcelsius"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:gravity="center"
+        android:text="Cº"
+        app:layout_constraintBottom_toTopOf="@+id/textcondicao"
+        app:layout_constraintEnd_toStartOf="@+id/texttemp"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texthoje" />
+
+    <TextView
+        android:id="@+id/textcondicao"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:gravity="center"
+        android:text="Condição"
+        app:layout_constraintBottom_toTopOf="@+id/textnascer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textcelsius" />
+
+    <TextView
+        android:id="@+id/textnascer"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:gravity="center"
+        android:text="Nascer do Sol"
+        app:layout_constraintBottom_toTopOf="@+id/textpor"
+        app:layout_constraintEnd_toStartOf="@+id/textnascersol"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textcondicao" />
+
+    <TextView
+        android:id="@+id/textpor"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:gravity="center"
+        android:text="Por do Sol"
+        app:layout_constraintEnd_toStartOf="@+id/textporsol"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textnascer" />
+
+    <TextView
+        android:id="@+id/textdata"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginRight="109dp"
+        android:gravity="center"
+        android:hint="Hoje"
+        app:layout_constraintBottom_toTopOf="@+id/texttemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botaoBuscar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/texttemp"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginLeft="192dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginRight="119dp"
+        android:gravity="center"
+        android:hint="Temperatura"
+        app:layout_constraintBottom_toTopOf="@+id/textdesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdata" />
+
+    <TextView
+        android:id="@+id/textdesc"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginLeft="192dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:hint="Descricao"
+        app:layout_constraintBottom_toTopOf="@+id/textnascersol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texttemp" />
+
+    <TextView
+        android:id="@+id/textnascersol"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginRight="109dp"
+        android:gravity="center"
+        android:hint="Nascer"
+        app:layout_constraintBottom_toTopOf="@+id/textporsol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdesc" />
+
+    <TextView
+        android:id="@+id/textporsol"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginRight="109dp"
+        android:layout_marginBottom="49dp"
+        android:gravity="center"
+        android:hint="Por do sol"
+        app:layout_constraintBottom_toTopOf="@+id/textdata3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textnascersol" />
+
+    <TextView
+        android:id="@+id/textamanha2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Amanhã"
+        app:layout_constraintBottom_toTopOf="@+id/textdata2"
+        app:layout_constraintEnd_toStartOf="@+id/textamanha3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textpor" />
+
+    <TextView
+        android:id="@+id/textdata2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:hint="Data"
+        app:layout_constraintEnd_toStartOf="@+id/textdata3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textamanha2" />
+
+    <TextView
+        android:id="@+id/textdesc2"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:gravity="center|center_horizontal|left|center_vertical"
+        android:hint="Descricao"
+        app:layout_constraintBottom_toTopOf="@+id/textmin"
+        app:layout_constraintEnd_toStartOf="@+id/textdesc3"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdata2" />
+
+    <TextView
+        android:id="@+id/textmin"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:hint="Miníma"
+        app:layout_constraintBottom_toTopOf="@+id/textmax"
+        app:layout_constraintEnd_toStartOf="@+id/textmin2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdesc2" />
+
+    <TextView
+        android:id="@+id/textmax"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="33dp"
+        android:gravity="center"
+        android:hint="Máxima"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textmax2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textmin" />
+
+    <TextView
+        android:id="@+id/textamanha3"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:gravity="center"
+        android:text="Depois"
+        app:layout_constraintBottom_toTopOf="@+id/textdata3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textporsol" />
+
+    <TextView
+        android:id="@+id/textdata3"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:gravity="center"
+        android:hint="Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textamanha3" />
+
+    <TextView
+        android:id="@+id/textmin2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:gravity="center"
+        android:hint="Miníma"
+        app:layout_constraintBottom_toTopOf="@+id/textmax2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdesc3" />
+
+    <TextView
+        android:id="@+id/textdesc3"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:hint="Descricao"
+        app:layout_constraintBottom_toTopOf="@+id/textmin2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdata3" />
+
+    <TextView
+        android:id="@+id/textmax2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginBottom="33dp"
+        android:gravity="center"
+        android:hint="Máxima"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textmin2" />
+
+    <TextView
+        android:id="@+id/textJson"
+        android:layout_width="81dp"
+        android:layout_height="5dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="778dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
